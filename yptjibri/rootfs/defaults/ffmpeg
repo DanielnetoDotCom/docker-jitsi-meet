@@ -1,0 +1,27 @@
+#!/bin/bash
+
+COMANDO="/usr/bin/ffmpeg"
+
+while test $# -gt 0
+do
+    T="$1"
+    if [ "${T:0:32}" == "rtmp://a.rtmp.youtube.com/live2/" ]; then
+        #COMANDO="$COMANDO rtmp://my-server-for-rtmp:1935/sub-rtmp-url/${T:32}"
+        COMANDO="$COMANDO ${T:32}"
+    else
+        COMANDO="$COMANDO $T"
+    fi
+    shift
+done
+
+echo "Llamando a ffmpeg sustituyendo rtmp si hay: «$COMANDO»."
+
+echo $COMANDO >> /var/log/jitsi/ffmpeg.log
+exec $COMANDO
+PROCESO_FFMPEG=$!
+
+echo "Esperando finalización del proceso: ${PROCESO_FFMPEG}."
+wait $PROCESO_FFMPEG
+
+
+
