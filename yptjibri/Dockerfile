@@ -6,6 +6,8 @@ FROM ${JITSI_REPO}/base-java
 ARG CHROME_RELEASE=78.0.3904.97
 ARG CHROMEDRIVER_MAJOR_RELEASE=78
 
+ENV PATH "/opt/utils:$PATH"
+
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 RUN \
@@ -47,5 +49,3 @@ RUN \
 COPY yptjibri/rootfs/ /
 
 VOLUME /config
-
-ENV PATH "/opt/utils:$PATH"
