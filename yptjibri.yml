@@ -3,7 +3,9 @@ version: '3'
 services:
     yptjibri:
 #        image: jitsi/yptjibri:latest
-        build: .
+        build:
+          context: .
+          dockerfile: yptjibri/Dockerfile
         restart: ${RESTART_POLICY}
         volumes:
             - ${CONFIG}/jibri:/config:Z
