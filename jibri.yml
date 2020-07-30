@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-    jibri:
+    yptjibri:
 #        image: jitsi/jibri:latest
         restart: ${RESTART_POLICY}
         volumes:
