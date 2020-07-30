@@ -48,3 +48,4 @@ COPY yptjibri/rootfs/ /
 
 VOLUME /config
 
+ENV PATH "/opt/utils:$PATH"
