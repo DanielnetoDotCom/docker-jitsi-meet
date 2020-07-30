@@ -44,7 +44,7 @@ RUN \
         && apt-dpkg-wrap apt-get install -y jitsi-upload-integrations jq \
         && apt-cleanup
 
-COPY rootfs/ /
+COPY yptjibri/rootfs/ /
 
 VOLUME /config
 
