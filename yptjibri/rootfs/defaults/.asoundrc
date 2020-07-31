@@ -1,13 +1,13 @@
 pcm.amix {
   type dmix
   ipc_key 219345
-  slave.pcm "hw:Loopback_2,0,0"
+  slave.pcm "hw:Loopback_{{ .Env.JIBRI_INSTANCE }},0,0"
 }
 
 pcm.asnoop {
   type dsnoop
   ipc_key 219346
-  slave.pcm "hw:Loopback_3,1,0"
+  slave.pcm "hw:Loopback_{{ .Env.JIBRI_INSTANCE }},0,1"
 }
 
 pcm.aduplex {
@@ -19,13 +19,13 @@ pcm.aduplex {
 pcm.bmix {
   type dmix
   ipc_key 219347
-  slave.pcm "hw:Loopback_3,0,0"
+  slave.pcm "hw:Loopback_{{ .Env.JIBRI_INSTANCE }},1,1"
 }
 
 pcm.bsnoop {
   type dsnoop
   ipc_key 219348
-  slave.pcm "hw:Loopback_2,1,0"
+  slave.pcm "hw:Loopback_{{ .Env.JIBRI_INSTANCE }},1,0"
 }
 
 pcm.bduplex {
@@ -43,4 +43,3 @@ pcm.!default {
   type plug
   slave.pcm "aduplex"
 }
-
