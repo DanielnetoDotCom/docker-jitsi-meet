@@ -74,3 +74,4 @@ tpl /defaults/graceful_shutdown.sh > /opt/jitsi/jibri/graceful_shutdown.sh
 tpl /defaults/reload.sh > /opt/jitsi/jibri/reload.sh
 tpl /defaults/shutdown.sh > /opt/jitsi/jibri/shutdown.sh
 tpl /defaults/jibri.service > /etc/systemd/system/jibri.service
+tpl /defaults/.asoundrc > /home/jibri/.asoundrc
