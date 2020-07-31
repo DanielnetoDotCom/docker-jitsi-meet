@@ -48,4 +48,6 @@ RUN \
 
 COPY yptjibri/rootfs/ /
 
+COPY yptjibri/rootfs/ /
+
 VOLUME /config
