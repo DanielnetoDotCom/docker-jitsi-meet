@@ -55,7 +55,7 @@ mkdir -p ${JIBRI_RECORDING_DIR}
 chown -R jibri ${JIBRI_RECORDING_DIR}
 
 # make logs dir
-[ -z "${JIBRI_LOGS_DIR}" ] && export JIBRI_LOGS_DIR=/config/logs
+[ -z "${JIBRI_LOGS_DIR}" ] && export JIBRI_LOGS_DIR=/config/log
 mkdir -p ${JIBRI_LOGS_DIR}
 chown -R jibri ${JIBRI_LOGS_DIR}
 
@@ -73,3 +73,4 @@ tpl /defaults/launch.sh > /opt/jitsi/jibri/launch.sh
 tpl /defaults/graceful_shutdown.sh > /opt/jitsi/jibri/graceful_shutdown.sh
 tpl /defaults/reload.sh > /opt/jitsi/jibri/reload.sh
 tpl /defaults/shutdown.sh > /opt/jitsi/jibri/shutdown.sh
+tpl /defaults/jibri.service > /etc/systemd/system/jibri.service
