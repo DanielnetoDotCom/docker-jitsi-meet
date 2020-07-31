@@ -7,7 +7,7 @@ pcm.amix {
 pcm.asnoop {
   type dsnoop
   ipc_key 219346
-  slave.pcm "hw:Loopback_2,1,0"
+  slave.pcm "hw:Loopback_3,1,0"
 }
 
 pcm.aduplex {
@@ -19,7 +19,7 @@ pcm.aduplex {
 pcm.bmix {
   type dmix
   ipc_key 219347
-  slave.pcm "hw:Loopback_2,0,0"
+  slave.pcm "hw:Loopback_3,0,0"
 }
 
 pcm.bsnoop {
